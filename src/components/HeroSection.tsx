@@ -15,6 +15,13 @@ const HeroSection: React.FC = () => {
       
       {/* 内容 */}
       <div className="relative z-10 text-center">
+        <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-pink-500 shadow-lg mb-6 mx-auto">
+          <img 
+            src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20portrait%20of%20a%20young%20Chinese%20woman%20with%20friendly%20smile%2C%20clean%20background&image_size=square_hd" 
+            alt="个人头像" 
+            className="w-full h-full object-cover"
+          />
+        </div>
         <h1 className="text-6xl md:text-8xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400 animate-pulse">
           汪宇涵
         </h1>

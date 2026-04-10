@@ -1,5 +1,5 @@
 import React from 'react';
-import { GraduationCap, User } from 'lucide-react';
+import { GraduationCap, User, MapPin } from 'lucide-react';
 
 const AboutSection: React.FC = () => {
   return (
@@ -8,6 +8,21 @@ const AboutSection: React.FC = () => {
         <h2 className="text-4xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400">
           个人信息
         </h2>
+        
+        <div className="flex flex-col items-center mb-12">
+          <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-purple-500 shadow-lg mb-4">
+            <img 
+              src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20portrait%20of%20a%20young%20Chinese%20woman%20with%20friendly%20smile%2C%20clean%20background&image_size=square_hd" 
+              alt="个人头像" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <h3 className="text-2xl font-semibold">汪宇涵</h3>
+          <p className="text-gray-300 mt-2 flex items-center">
+            <MapPin className="w-4 h-4 mr-2 text-pink-500" />
+            四川遂宁
+          </p>
+        </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* 教育背景 */}
