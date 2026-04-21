@@ -114,6 +114,7 @@ const CodeRunner: React.FC<{
                 height: '200px',
                 fontSize: '14px',
                 fontFamily: 'monospace',
+                overflow: 'auto',
               }}
             />
           </div>
@@ -137,7 +138,7 @@ const CodeRunner: React.FC<{
           {/* 输出区域 */}
           <div className="bg-gray-900 rounded-lg p-4">
             <h4 className="text-sm font-medium text-gray-400 mb-2">输出：</h4>
-            <pre className="text-sm text-gray-300 whitespace-pre-wrap">{output}</pre>
+            <pre className="text-sm text-gray-300 whitespace-pre-wrap max-h-40 overflow-auto">{output}</pre>
           </div>
         </div>
       )}
