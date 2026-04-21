@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { BookOpen, Home, Menu, X } from 'lucide-react';
 import CodeRunner from '../components/CodeRunner';
+import FloatingCodeRunner from '../components/FloatingCodeRunner';
 
 const PythonCourse: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,7 +16,7 @@ const PythonCourse: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div>
       {/* 导航栏 */}
       <nav className="fixed top-0 left-0 right-0 bg-gray-800 bg-opacity-90 backdrop-blur-sm z-50 shadow-lg">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -1184,6 +1185,7 @@ print(f"10 / 5 = {result4}")
           </section>
         </div>
       </div>
+      <FloatingCodeRunner />
     </div>
   );
 };
