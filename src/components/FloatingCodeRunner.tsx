@@ -23,7 +23,7 @@ const FloatingCodeRunner: React.FC = () => {
         try {
           const pyodide = await import('pyodide');
           pyodideRef.current = await pyodide.loadPyodide({
-            indexURL: 'https://cdn.jsdelivr.net/pyodide/v0.25.0/full/',
+            indexURL: 'https://cdn.jsdelivr.net/pyodide/v0.29.3/full/',
           });
           
           // 重定向标准输出
