@@ -21,15 +21,22 @@ const FloatingCodeRunner: React.FC = () => {
     const loadPyodide = async () => {
       if (!pyodideRef.current) {
         try {
-          const pyodide = await import('pyodide');
-          pyodideRef.current = await pyodide.loadPyodide({
-            indexURL: 'https://cdn.jsdelivr.net/pyodide/v0.29.3/full/',
-          });
-          
-          // 重定向标准输出
-          pyodideRef.current.globals.set('print', (text: any) => {
-            stdoutRef.current += text + '\n';
-          });
+          // 动态加载Pyodide CDN
+          const script = document.createElement('script');
+          script.src = 'https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.js';
+          script.async = true;
+          script.onload = async () => {
+            // @ts-ignore
+            pyodideRef.current = await window.loadPyodide({
+              indexURL: 'https://cdn.jsdelivr.net/pyodide/v0.29.3/full/',
+            });
+            
+            // 重定向标准输出
+            pyodideRef.current.globals.set('print', (text: any) => {
+              stdoutRef.current += String(text) + '\n';
+            });
+          };
+          document.body.appendChild(script);
         } catch (error) {
           console.error('Failed to load Pyodide:', error);
           setOutput('Failed to load Python runtime.');
